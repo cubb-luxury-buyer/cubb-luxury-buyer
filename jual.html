@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jual Barang Mewah — CUBB Luxury Goods Buyer</title>
+  <meta name="description" content="Jual putus tas dan jam tangan mewah original Anda ke CUBB. Proses profesional, discreet, cepat, dan kompetitif. Isi formulir pengajuan sekarang." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="Navigasi utama">
+  <a href="index.html" class="navbar-logo" aria-label="Beranda CUBB Luxury Goods Buyer">
+    <span class="logo-main">CUBB</span>
+    <span class="logo-sub">LUXURY GOODS BUYER</span>
+  </a>
+  <ul class="navbar-links" role="list">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="jual.html" class="active">Jual Barang</a></li>
+    <li><a href="autentikasi.html">Autentikasi By RY</a></li>
+  </ul>
+  <a href="jual.html" class="navbar-cta" aria-label="Ajukan penawaran">Jual Sekarang</a>
+  <button class="hamburger" aria-label="Buka menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" role="dialog" aria-label="Menu navigasi mobile">
+  <a href="index.html">Beranda</a>
+  <a href="jual.html">Jual Barang</a>
+  <a href="autentikasi.html">Autentikasi By RY</a>
+  <a href="jual.html" class="btn btn-gold" style="margin-top:8px">Jual Sekarang</a>
+</div>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero" aria-labelledby="page-heading">
+  <div class="container">
+    <p class="section-label">Pengajuan Beli Putus</p>
+    <div class="divider-gold"></div>
+    <h1 id="page-heading">Jual Barang Mewah Anda</h1>
+    <p>Isi formulir di bawah ini dengan informasi dan foto barang Anda. Tim kami akan meninjau pengajuan dan menghubungi Anda melalui WhatsApp.</p>
+  </div>
+</section>
+
+<!-- ===== FORM SECTION ===== -->
+<section class="form-section section-pad" aria-labelledby="form-heading">
+  <div class="container">
+    <div class="form-wrapper">
+
+      <h2 class="form-title" id="form-heading">Formulir Pengajuan</h2>
+      <p class="form-intro">
+        Semua penawaran bersifat evaluatif dan dapat berubah setelah pemeriksaan langsung. Harga akhir ditentukan berdasarkan keaslian, kondisi, kelengkapan, model, dan nilai pasar. Barang yang tidak memenuhi kriteria dapat ditolak dengan pemberitahuan yang sopan.
+      </p>
+
+      <!-- Type Toggle -->
+      <div class="type-toggle" role="group" aria-label="Pilih jenis barang">
+        <button class="type-btn active" data-target="fields-tas" type="button" aria-pressed="true">
+          Tas Mewah
+        </button>
+        <button class="type-btn" data-target="fields-jam" type="button" aria-pressed="false">
+          Jam Tangan Mewah
+        </button>
+      </div>
+
+      <form id="sell-form" novalidate aria-label="Formulir pengajuan jual barang">
+
+        <!-- ── Data Pemilik ── -->
+        <fieldset style="border:none;padding:0;margin:0 0 32px">
+          <legend style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">Data Pemilik</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nama">Nama Lengkap <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="nama" name="nama" required placeholder="Masukkan nama Anda" autocomplete="name" />
+              <span class="field-error" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="whatsapp">Nomor WhatsApp <span class="req" aria-hidden="true">*</span></label>
+              <input type="tel" id="whatsapp" name="whatsapp" required placeholder="08xx-xxxx-xxxx" autocomplete="tel" />
+              <span class="field-error" role="alert"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- ── Fields Tas ── -->
+        <div id="fields-tas" class="form-fields-section active" aria-label="Detail tas mewah">
+          <fieldset style="border:none;padding:0;margin:0 0 28px">
+            <legend style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">Detail Tas</legend>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="merek">Merek <span class="req" aria-hidden="true">*</span></label>
+                <select id="merek" name="merek" required>
+                  <option value="">Pilih merek</option>
+                  <option>Hermès</option>
+                  <option>Chanel</option>
+                  <option>Louis Vuitton</option>
+                  <option>Dior</option>
+                  <option>Gucci</option>
+                  <option>Prada</option>
+                  <option>Bottega Veneta</option>
+                  <option>Saint Laurent</option>
+                  <option>Fendi</option>
+                  <option>Balenciaga</option>
+                  <option>Merek lainnya</option>
+                </select>
+                <span class="field-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="model">Model / Nama Tas</label>
+                <input type="text" id="model" name="model" placeholder="Cth: Birkin 30, Classic Flap" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="warna">Warna</label>
+                <input type="text" id="warna" name="warna" placeholder="Cth: Black, Etoupe, Caramel" />
+              </div>
+              <div class="form-group">
+                <label for="tahun-tas">Tahun Pembelian (jika diketahui)</label>
+                <input type="text" id="tahun-tas" name="tahun_tas" placeholder="Cth: 2019" inputmode="numeric" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="kondisi-tas">Kondisi Barang <span class="req" aria-hidden="true">*</span></label>
+              <select id="kondisi-tas" name="kondisi_tas" required>
+                <option value="">Pilih kondisi</option>
+                <option value="mint">Mint / Seperti baru</option>
+                <option value="excellent">Excellent — hampir sempurna, pemakaian sangat minimal</option>
+                <option value="very_good">Very Good — bekas pakai ringan, tidak ada kerusakan signifikan</option>
+                <option value="good">Good — bekas pakai terlihat, ada keausan minor</option>
+                <option value="fair">Fair — ada kerusakan atau keausan yang cukup terlihat</option>
+              </select>
+              <span class="field-error" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label>Kelengkapan Barang</label>
+              <div class="checkbox-group" role="group" aria-label="Kelengkapan tas">
+                <div class="checkbox-item"><input type="checkbox" id="dustbag" name="kelengkapan[]" value="dust_bag" /><label for="dustbag">Dust Bag</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="box-tas" name="kelengkapan[]" value="box" /><label for="box-tas">Box</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="kartu-tas" name="kelengkapan[]" value="kartu" /><label for="kartu-tas">Authenticity Card</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="surat-tas" name="kelengkapan[]" value="surat" /><label for="surat-tas">Surat / Receipt</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="invoice-tas" name="kelengkapan[]" value="invoice" /><label for="invoice-tas">Invoice Pembelian</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="mirror" name="kelengkapan[]" value="mirror" /><label for="mirror">Mirror</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="lock-key" name="kelengkapan[]" value="lock_key" /><label for="lock-key">Lock &amp; Key</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="care-book" name="kelengkapan[]" value="care_booklet" /><label for="care-book">Care Booklet</label></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="catatan-tas">Catatan Tambahan tentang Kondisi</label>
+              <textarea id="catatan-tas" name="catatan_tas" placeholder="Jelaskan kondisi detail, kerusakan, atau informasi lain yang relevan..."></textarea>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- ── Fields Jam ── -->
+        <div id="fields-jam" class="form-fields-section" aria-label="Detail jam tangan mewah">
+          <fieldset style="border:none;padding:0;margin:0 0 28px">
+            <legend style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">Detail Jam Tangan</legend>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="merek-jam">Merek <span class="req" aria-hidden="true">*</span></label>
+                <select id="merek-jam" name="merek_jam">
+                  <option value="">Pilih merek</option>
+                  <option>Rolex</option>
+                  <option>Patek Philippe</option>
+                  <option>Audemars Piguet</option>
+                  <option>Cartier</option>
+                  <option>Omega</option>
+                  <option>Merek lainnya</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="model-jam">Model / Referensi</label>
+                <input type="text" id="model-jam" name="model_jam" placeholder="Cth: Submariner Date, Royal Oak 15400" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="tahun-jam">Tahun Pembelian (jika diketahui)</label>
+                <input type="text" id="tahun-jam" name="tahun_jam" placeholder="Cth: 2021" inputmode="numeric" />
+              </div>
+              <div class="form-group">
+                <label for="kondisi-jam">Kondisi Barang <span class="req" aria-hidden="true">*</span></label>
+                <select id="kondisi-jam" name="kondisi_jam">
+                  <option value="">Pilih kondisi</option>
+                  <option value="mint">Mint / Seperti baru</option>
+                  <option value="excellent">Excellent — pemakaian sangat minimal</option>
+                  <option value="very_good">Very Good — bekas pakai ringan</option>
+                  <option value="good">Good — bekas pakai terlihat</option>
+                  <option value="fair">Fair — ada keausan atau kerusakan minor</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Kelengkapan Jam</label>
+              <div class="checkbox-group" role="group" aria-label="Kelengkapan jam tangan">
+                <div class="checkbox-item"><input type="checkbox" id="box-jam" name="kelengkapan_jam[]" value="box" /><label for="box-jam">Box Original</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="paper-jam" name="kelengkapan_jam[]" value="paper" /><label for="paper-jam">Paper / Warranty Card</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="sertifikat" name="kelengkapan_jam[]" value="sertifikat" /><label for="sertifikat">Sertifikat</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="invoice-jam" name="kelengkapan_jam[]" value="invoice" /><label for="invoice-jam">Invoice Pembelian</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="bracelet-extra" name="kelengkapan_jam[]" value="extra_bracelet" /><label for="bracelet-extra">Extra Bracelet / Strap</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="tag-jam" name="kelengkapan_jam[]" value="hang_tag" /><label for="tag-jam">Hang Tag</label></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="catatan-jam">Catatan Tambahan</label>
+              <textarea id="catatan-jam" name="catatan_jam" placeholder="Riwayat servis, kerusakan, atau informasi lain yang relevan..."></textarea>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- ── Harga Harapan ── -->
+        <div class="form-group">
+          <label for="harga">Harga yang Anda Harapkan</label>
+          <input type="text" id="harga" name="harga" placeholder="Cth: Rp 45.000.000 (opsional)" />
+        </div>
+
+        <!-- ── Upload Foto ── -->
+        <div class="form-group">
+          <label>Foto Barang <span class="req" aria-hidden="true">*</span></label>
+          <p style="font-family:'Montserrat',sans-serif;font-size:0.72rem;color:var(--gray);margin-bottom:10px;line-height:1.7">
+            Sertakan foto dari berbagai sisi: depan, belakang, samping, bagian dalam, logo, hardware, serial number / date code, jahitan, dan kelengkapan yang ada.
+          </p>
+          <div class="upload-zone" id="upload-zone-main" role="button" aria-label="Area unggah foto barang" tabindex="0">
+            <input type="file" accept="image/*" multiple aria-label="Pilih foto barang" />
+            <div class="upload-icon" aria-hidden="true">📷</div>
+            <p><span>Klik untuk memilih foto</span> atau seret &amp; lepas ke sini</p>
+            <p>Format: JPG, PNG, WEBP — Maksimal 10 foto</p>
+          </div>
+          <div class="upload-preview" id="preview-main" role="list" aria-label="Pratinjau foto yang dipilih"></div>
+        </div>
+
+        <!-- ── Submit ── -->
+        <div class="form-submit-row">
+          <p class="form-note">
+            Dengan mengirim formulir ini, Anda menyetujui bahwa data dan foto yang diberikan akan digunakan untuk keperluan evaluasi penawaran. Semua informasi dijaga kerahasiaannya.
+          </p>
+          <button type="submit" class="btn btn-gold" aria-label="Kirim pengajuan jual barang">
+            Kirim Pengajuan
+          </button>
+        </div>
+
+        <!-- ── Success Message ── -->
+        <div class="success-message" id="sell-success" role="status" aria-live="polite">
+          <h3>Pengajuan Diterima</h3>
+          <p>
+            Terima kasih telah mengajukan penawaran. Pesan WhatsApp telah disiapkan untuk Anda.<br />
+            Tim kami akan meninjau informasi dan foto yang Anda berikan, lalu menghubungi Anda dalam waktu dekat.
+          </p>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- Info status pengajuan -->
+    <div style="max-width:760px;margin:40px auto 0;border:1px solid var(--border);padding:32px 36px;background:var(--white);">
+      <p class="section-label" style="margin-bottom:12px">Status Pengajuan</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:0.78rem;color:var(--gray);line-height:1.85;margin-bottom:20px">
+        Setelah pengajuan diterima, kami akan memperbarui status melalui WhatsApp:
+      </p>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:var(--cream-dark);color:var(--black);padding:4px 10px;white-space:nowrap">Diterima</span>
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.75rem;color:var(--gray)">Pengajuan berhasil masuk dan akan segera ditinjau.</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:var(--cream-dark);color:var(--black);padding:4px 10px;white-space:nowrap">Ditinjau</span>
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.75rem;color:var(--gray)">Tim sedang mengevaluasi kondisi, kelengkapan, dan nilai pasar barang.</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:var(--cream-dark);color:var(--black);padding:4px 10px;white-space:nowrap">Info Tambahan</span>
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.75rem;color:var(--gray)">Kami mungkin meminta foto atau informasi tambahan jika diperlukan.</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:rgba(201,168,76,0.15);color:var(--gold-dark);padding:4px 10px;white-space:nowrap">Penawaran</span>
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.75rem;color:var(--gray)">Harga penawaran diberikan berdasarkan hasil evaluasi.</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:rgba(10,10,10,0.08);color:var(--black);padding:4px 10px;white-space:nowrap">Deal</span>
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.75rem;color:var(--gray)">Transaksi beli putus disepakati dan diselesaikan.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-main">CUBB</div>
+        <div class="logo-sub">LUXURY GOODS BUYER</div>
+        <p>Kami membeli putus tas dan jam mewah preloved/original. Proses transparan, aman, dan langsung cair. Layanan autentikasi tersedia melalui Autentikasi By RY.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <ul role="list">
+          <li><a href="jual.html?type=tas">Beli Putus Tas Mewah</a></li>
+          <li><a href="jual.html?type=jam">Beli Putus Jam Tangan</a></li>
+          <li><a href="autentikasi.html">Autentikasi By RY</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Informasi</h4>
+        <ul role="list">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="jual.html">Jual Barang</a></li>
+          <li><a href="autentikasi.html">Autentikasi</a></li>
+          <li><a href="https://wa.me/6285179936549" target="_blank" rel="noopener">Hubungi Kami</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CUBB Luxury Goods Buyer. Seluruh hak dilindungi.</p>
+      <p>Autentikasi By RY &mdash; Layanan Autentikasi Tas Eropa</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FLOAT ===== -->
+<a href="https://wa.me/6285179936549?text=Halo%20CUBB%2C%20saya%20ingin%20konsultasi%20jual%20putus%20barang%20mewah."
+   target="_blank" rel="noopener noreferrer"
+   class="wa-float" aria-label="Hubungi CUBB via WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="wa-label">WhatsApp</span>
+</a>
+
+<script src="js/main.js"></script>
+<script src="js/form.js"></script>
+<script>
+  // Pre-select tab based on URL param ?type=tas or ?type=jam
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get('type');
+    if (type === 'jam') {
+      document.querySelector('[data-target="fields-jam"]')?.click();
+    }
+  })();
+</script>
+</body>
+</html>

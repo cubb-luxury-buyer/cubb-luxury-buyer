@@ -1,0 +1,614 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autentikasi By RY — CUBB Luxury Goods Buyer</title>
+  <meta name="description" content="Autentikasi By RY adalah layanan pemeriksaan keaslian tas merek Eropa, bagian dari CUBB. Tersedia autentikasi foto dan pemeriksaan fisik. Konsultasi awal gratis via WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Page-specific: Auth hero accent */
+    .auth-hero-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      padding: 6px 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 28px;
+    }
+    .auth-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+    }
+    .auth-intro-text h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 20px; }
+    .auth-intro-text p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem; color: var(--gray);
+      line-height: 1.9; margin-bottom: 16px;
+    }
+    .auth-visual {
+      background: var(--black);
+      border: 1px solid var(--border);
+      padding: 48px 36px; text-align: center;
+    }
+    .auth-visual-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 700;
+      color: var(--cream); letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+    .auth-visual-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.26em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 32px;
+    }
+    .auth-visual-seal {
+      width: 100px; height: 100px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      margin: 0 auto 24px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .auth-visual-seal::before {
+      content: '';
+      position: absolute; inset: 6px;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 50%;
+    }
+    .auth-visual-seal svg { width: 40px; height: 40px; stroke: var(--gold); fill: none; }
+    .auth-visual p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem; color: rgba(245,240,232,0.5);
+      letter-spacing: 0.1em;
+    }
+    /* Brands list */
+    .auth-brands {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;
+    }
+    .auth-brand-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      border: 1px solid var(--border);
+      padding: 5px 14px; color: var(--gray);
+    }
+    /* How auth works */
+    .auth-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px; background: rgba(201,168,76,0.1);
+    }
+    .auth-step {
+      background: var(--white);
+      padding: 40px 28px; text-align: center;
+    }
+    .auth-step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem; font-weight: 700;
+      color: rgba(201,168,76,0.2); margin-bottom: 16px; line-height: 1;
+    }
+    .auth-step h4 { font-size: 1rem; margin-bottom: 10px; }
+    .auth-step p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem; color: var(--gray); line-height: 1.85;
+    }
+    /* Result badges */
+    .result-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .result-card {
+      border: 1px solid var(--border);
+      padding: 32px 24px; text-align: center; background: var(--white);
+    }
+    .result-icon { font-size: 2rem; margin-bottom: 14px; }
+    .result-card h4 { font-size: 1rem; margin-bottom: 8px; }
+    .result-card p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem; color: var(--gray); line-height: 1.8;
+    }
+    @media (max-width: 900px) {
+      .auth-intro-grid { grid-template-columns: 1fr; }
+      .auth-steps { grid-template-columns: 1fr; background: none; gap: 1px; }
+      .result-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .auth-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="Navigasi utama">
+  <a href="index.html" class="navbar-logo" aria-label="Beranda CUBB Luxury Goods Buyer">
+    <span class="logo-main">CUBB</span>
+    <span class="logo-sub">LUXURY GOODS BUYER</span>
+  </a>
+  <ul class="navbar-links" role="list">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="jual.html">Jual Barang</a></li>
+    <li><a href="autentikasi.html" class="active">Autentikasi By RY</a></li>
+  </ul>
+  <a href="jual.html" class="navbar-cta" aria-label="Ajukan penawaran">Jual Sekarang</a>
+  <button class="hamburger" aria-label="Buka menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" role="dialog" aria-label="Menu navigasi mobile">
+  <a href="index.html">Beranda</a>
+  <a href="jual.html">Jual Barang</a>
+  <a href="autentikasi.html">Autentikasi By RY</a>
+  <a href="jual.html" class="btn btn-gold" style="margin-top:8px">Jual Sekarang</a>
+</div>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero" style="padding-bottom:100px" aria-labelledby="auth-page-heading">
+  <div class="container">
+    <div class="auth-hero-badge" aria-label="Layanan spesialis">Layanan Spesialis</div>
+    <h1 id="auth-page-heading" style="color:var(--cream);font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:14px">
+      Autentikasi <em style="color:var(--gold);font-style:italic">By RY</em>
+    </h1>
+    <p style="font-family:'Montserrat',sans-serif;font-size:0.82rem;color:rgba(245,240,232,0.6);max-width:520px;margin:0 auto;line-height:1.9">
+      Layanan pemeriksaan keaslian profesional khusus tas merek Eropa. Berbasis bukti foto atau pemeriksaan fisik langsung — bukan sekadar pendapat.
+    </p>
+  </div>
+</section>
+
+<!-- ===== INTRO ===== -->
+<section class="section-pad" style="background:var(--cream)" aria-labelledby="intro-heading">
+  <div class="container">
+    <div class="auth-intro-grid">
+      <div class="auth-intro-text">
+        <p class="section-label">Tentang Layanan</p>
+        <div class="divider-gold" style="margin:16px 0"></div>
+        <h2 id="intro-heading">Apa Itu Autentikasi By RY?</h2>
+        <p>
+          Autentikasi By RY adalah layanan pemeriksaan keaslian tas merek Eropa yang dilakukan secara profesional dan berbasis bukti. Kami tidak memberikan penilaian asal — setiap hasil autentikasi didukung oleh analisis detail terhadap material, hardware, jahitan, serial number, dan elemen lain yang relevan.
+        </p>
+        <p>
+          Layanan ini cocok bagi Anda yang ingin memastikan keaslian tas sebelum membeli, menjual, atau sekadar ingin tahu status barang yang dimiliki.
+        </p>
+        <p>
+          Jika data atau foto tidak mencukupi untuk membuat kesimpulan, kami akan menginformasikan apa yang masih diperlukan — kami tidak akan memberikan hasil yang tidak berdasar.
+        </p>
+        <div class="auth-brands" role="list" aria-label="Merek yang ditangani">
+          <span class="auth-brand-tag" role="listitem">Louis Vuitton</span>
+          <span class="auth-brand-tag" role="listitem">Chanel</span>
+          <span class="auth-brand-tag" role="listitem">Hermès</span>
+          <span class="auth-brand-tag" role="listitem">Gucci</span>
+          <span class="auth-brand-tag" role="listitem">Dior</span>
+          <span class="auth-brand-tag" role="listitem">Prada</span>
+          <span class="auth-brand-tag" role="listitem">Bottega Veneta</span>
+          <span class="auth-brand-tag" role="listitem">Saint Laurent</span>
+          <span class="auth-brand-tag" role="listitem">Fendi</span>
+          <span class="auth-brand-tag" role="listitem">Balenciaga</span>
+        </div>
+      </div>
+      <div class="auth-visual" role="presentation">
+        <div class="auth-visual-logo">Autentikasi</div>
+        <div class="auth-visual-sub">By RY</div>
+        <div class="auth-visual-seal" aria-hidden="true">
+          <svg viewBox="0 0 24 24" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 2L4 6v6c0 5.25 3.5 9.75 8 11 4.5-1.25 8-5.75 8-11V6l-8-4z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p>Pemeriksaan Profesional &amp; Berbasis Bukti</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="section-pad" style="background:var(--black)" aria-labelledby="pricing-heading">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Pilihan Layanan</p>
+      <div class="divider-gold"></div>
+      <h2 id="pricing-heading" style="color:var(--cream)">Dua Jenis Autentikasi</h2>
+      <p style="color:rgba(245,240,232,0.55)">Pilih layanan yang sesuai dengan kebutuhan dan ketersediaan barang Anda.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+        <h3>Autentikasi Foto</h3>
+        <div class="pricing-price"><sub>mulai</sub> Rp&nbsp;150.000</div>
+        <p>Pemeriksaan keaslian berdasarkan foto detail yang Anda kirimkan. Cocok jika barang tidak bisa dibawa langsung.</p>
+        <ul role="list">
+          <li>Analisis foto depan, belakang, samping &amp; dalam</li>
+          <li>Pemeriksaan logo, hardware, jahitan &amp; date code</li>
+          <li>Estimasi proses 1–3 hari kerja</li>
+          <li>Hasil dikirim melalui WhatsApp</li>
+          <li>Konsultasi awal gratis</li>
+        </ul>
+        <a href="#form-autentikasi" class="btn btn-outline">Ajukan Sekarang</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Rekomendasi</div>
+        <h3>Pemeriksaan Fisik</h3>
+        <div class="pricing-price"><sub>mulai</sub> Rp&nbsp;300.000</div>
+        <p>Pemeriksaan langsung terhadap barang fisik. Hasil lebih akurat dan komprehensif.</p>
+        <ul role="list">
+          <li>Semua cakupan autentikasi foto</li>
+          <li>Pemeriksaan material, berat, &amp; tekstur langsung</li>
+          <li>Verifikasi jahitan, engsel, &amp; hardware fisik</li>
+          <li>Estimasi proses 1–2 hari kerja</li>
+          <li>Laporan hasil lebih detail</li>
+          <li>Koordinasi pengiriman atau kunjungan via WA</li>
+        </ul>
+        <a href="https://wa.me/6285179936549?text=Halo%20CUBB%2C%20saya%20ingin%20konsultasi%20autentikasi%20fisik%20tas%20saya."
+           target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+          Konsultasi via WhatsApp
+        </a>
+      </div>
+
+    </div>
+    <p style="text-align:center;font-family:'Montserrat',sans-serif;font-size:0.72rem;color:rgba(245,240,232,0.35);margin-top:28px;line-height:1.8">
+      Harga dapat berbeda tergantung merek dan kompleksitas pemeriksaan. Konsultasikan kebutuhan Anda terlebih dahulu.
+    </p>
+  </div>
+</section>
+
+<!-- ===== CARA KERJA ===== -->
+<section class="section-pad" style="background:var(--cream-dark)" aria-labelledby="cara-kerja-heading">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Proses Autentikasi</p>
+      <div class="divider-gold"></div>
+      <h2 id="cara-kerja-heading">Bagaimana Prosesnya?</h2>
+      <p>Tiga langkah sederhana dari pengajuan hingga hasil autentikasi diterima.</p>
+    </div>
+    <div class="auth-steps">
+      <div class="auth-step">
+        <div class="auth-step-num" aria-hidden="true">1</div>
+        <h4>Ajukan &amp; Kirim Foto</h4>
+        <p>Isi formulir pengajuan dengan informasi merek, model, dan unggah foto detail tas Anda. Semakin lengkap foto, semakin akurat hasilnya.</p>
+      </div>
+      <div class="auth-step">
+        <div class="auth-step-num" aria-hidden="true">2</div>
+        <h4>Pemeriksaan Tim</h4>
+        <p>Tim kami memeriksa setiap detail secara seksama. Jika foto kurang, kami akan meminta foto tambahan sebelum memberikan hasil.</p>
+      </div>
+      <div class="auth-step">
+        <div class="auth-step-num" aria-hidden="true">3</div>
+        <h4>Hasil Dikirim</h4>
+        <p>Hasil autentikasi dikirim melalui WhatsApp disertai penjelasan yang jelas dan berbasis bukti yang ditemukan selama pemeriksaan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HASIL AUTENTIKASI ===== -->
+<section class="section-pad" style="background:var(--cream)" aria-labelledby="hasil-heading">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Kemungkinan Hasil</p>
+      <div class="divider-gold"></div>
+      <h2 id="hasil-heading">Hasil Autentikasi</h2>
+      <p>Kami memberikan hasil yang jujur dan berbasis bukti. Tidak ada janji absolut jika data tidak mencukupi.</p>
+    </div>
+    <div class="result-grid">
+      <div class="result-card">
+        <div class="result-icon" aria-hidden="true">✓</div>
+        <h4 style="color:#2e7d32">Autentik</h4>
+        <p>Semua elemen yang diperiksa konsisten dengan standar keaslian merek. Barang dinilai autentik berdasarkan data dan foto yang tersedia.</p>
+      </div>
+      <div class="result-card">
+        <div class="result-icon" aria-hidden="true">✗</div>
+        <h4 style="color:#c0392b">Indikasi Tidak Autentik</h4>
+        <p>Ditemukan satu atau lebih elemen yang tidak konsisten dengan standar keaslian merek. Penjelasan temuan disertakan dalam hasil.</p>
+      </div>
+      <div class="result-card">
+        <div class="result-icon" aria-hidden="true">?</div>
+        <h4 style="color:var(--gold-dark)">Tidak Dapat Disimpulkan</h4>
+        <p>Data atau foto yang tersedia tidak mencukupi untuk membuat kesimpulan yang dapat dipertanggungjawabkan. Kami akan menjelaskan apa yang masih diperlukan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORM AUTENTIKASI ===== -->
+<section class="form-section section-pad" id="form-autentikasi" aria-labelledby="auth-form-heading">
+  <div class="container">
+    <div class="form-wrapper">
+
+      <h2 class="form-title" id="auth-form-heading">Formulir Pengajuan Autentikasi</h2>
+      <p class="form-intro">
+        Isi formulir di bawah ini dengan informasi detail tas Anda. Sertakan foto yang lengkap agar proses pemeriksaan dapat dilakukan secara akurat. Jika foto tidak mencukupi, kami akan menghubungi Anda untuk meminta foto tambahan.
+      </p>
+
+      <form id="auth-form" novalidate aria-label="Formulir pengajuan autentikasi">
+
+        <!-- Data Pelanggan -->
+        <fieldset style="border:none;padding:0;margin:0 0 32px">
+          <legend style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px">Data Pelanggan</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="auth-nama">Nama Lengkap <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="auth-nama" name="nama" required placeholder="Masukkan nama Anda" autocomplete="name" />
+              <span class="field-error" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="auth-wa">Nomor WhatsApp <span class="req" aria-hidden="true">*</span></label>
+              <input type="tel" id="auth-wa" name="whatsapp" required placeholder="08xx-xxxx-xxxx" autocomplete="tel" />
+              <span class="field-error" role="alert"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Detail Tas -->
+        <fieldset style="border:none;padding:0;margin:0 0 28px">
+          <legend style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px">Detail Tas</legend>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="auth-merek">Merek <span class="req" aria-hidden="true">*</span></label>
+              <select id="auth-merek" name="merek" required>
+                <option value="">Pilih merek</option>
+                <option>Louis Vuitton</option>
+                <option>Chanel</option>
+                <option>Hermès</option>
+                <option>Gucci</option>
+                <option>Dior</option>
+                <option>Prada</option>
+                <option>Bottega Veneta</option>
+                <option>Saint Laurent</option>
+                <option>Fendi</option>
+                <option>Balenciaga</option>
+                <option>Merek lainnya</option>
+              </select>
+              <span class="field-error" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="auth-model">Model / Nama Tas</label>
+              <input type="text" id="auth-model" name="model" placeholder="Cth: Neverfull MM, Classic Flap Medium" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="auth-tipe">Jenis Layanan <span class="req" aria-hidden="true">*</span></label>
+              <select id="auth-tipe" name="tipe_layanan" required>
+                <option value="">Pilih jenis layanan</option>
+                <option value="foto">Autentikasi Foto</option>
+                <option value="fisik">Pemeriksaan Fisik</option>
+              </select>
+              <span class="field-error" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="auth-riwayat">Riwayat Pembelian (jika ada)</label>
+              <input type="text" id="auth-riwayat" name="riwayat" placeholder="Cth: Beli di Paris 2022, beli second dari teman" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="auth-catatan">Informasi Tambahan</label>
+            <textarea id="auth-catatan" name="catatan" placeholder="Ceritakan kondisi tas, alasan autentikasi, atau hal lain yang perlu kami ketahui..."></textarea>
+          </div>
+        </fieldset>
+
+        <!-- Upload Foto -->
+        <div class="form-group">
+          <label>Foto Tas <span class="req" aria-hidden="true">*</span></label>
+          <p style="font-family:'Montserrat',sans-serif;font-size:0.72rem;color:var(--gray);margin-bottom:10px;line-height:1.75">
+            Sertakan foto: <strong>depan, belakang, samping kiri &amp; kanan, bagian dalam, dasar tas, logo, hardware, jahitan, date code / serial number, label, dan kelengkapan</strong> yang ada.
+            Semakin lengkap foto, semakin akurat hasil autentikasi.
+          </p>
+          <div class="upload-zone" id="upload-zone-auth" role="button" aria-label="Area unggah foto tas" tabindex="0">
+            <input type="file" accept="image/*" multiple aria-label="Pilih foto tas untuk autentikasi" />
+            <div class="upload-icon" aria-hidden="true">🔍</div>
+            <p><span>Klik untuk memilih foto</span> atau seret &amp; lepas ke sini</p>
+            <p>Format: JPG, PNG, WEBP — Disarankan minimal 8–12 foto</p>
+          </div>
+          <div class="upload-preview" id="preview-auth" role="list" aria-label="Pratinjau foto yang dipilih"></div>
+        </div>
+
+        <!-- Submit -->
+        <div class="form-submit-row">
+          <p class="form-note">
+            Dengan mengirim formulir ini, Anda menyetujui bahwa foto dan data yang diberikan digunakan untuk keperluan autentikasi. Semua informasi dan foto dijaga kerahasiaannya dan tidak disebarluaskan.
+          </p>
+          <button type="submit" class="btn btn-gold" aria-label="Kirim pengajuan autentikasi">
+            Kirim Pengajuan
+          </button>
+        </div>
+
+        <!-- Success -->
+        <div class="success-message" id="auth-success" role="status" aria-live="polite">
+          <h3>Pengajuan Autentikasi Diterima</h3>
+          <p>
+            Terima kasih. Pesan WhatsApp telah disiapkan untuk Anda.<br />
+            Tim kami akan memeriksa foto dan informasi yang diberikan. Jika foto kurang, kami akan menghubungi Anda untuk meminta tambahan.
+          </p>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- Status autentikasi -->
+    <div style="max-width:760px;margin:40px auto 0;border:1px solid var(--border);padding:32px 36px;background:var(--white)">
+      <p class="section-label" style="margin-bottom:12px">Status Pengajuan</p>
+      <p style="font-family:'Montserrat',sans-serif;font-size:0.78rem;color:var(--gray);line-height:1.85;margin-bottom:20px">
+        Kami akan memperbarui status pengajuan autentikasi Anda melalui WhatsApp:
+      </p>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:var(--cream-dark);color:var(--black);padding:4px 10px;white-space:nowrap">Diterima</span>
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.75rem;color:var(--gray)">Pengajuan berhasil masuk dan akan segera diperiksa.</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:var(--cream-dark);color:var(--black);padding:4px 10px;white-space:nowrap">Diperiksa</span>
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.75rem;color:var(--gray)">Tim sedang menganalisis foto dan detail yang diberikan.</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:var(--cream-dark);color:var(--black);padding:4px 10px;white-space:nowrap">Foto Tambahan</span>
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.75rem;color:var(--gray)">Foto yang tersedia belum mencukupi — kami akan menghubungi Anda.</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:rgba(201,168,76,0.15);color:var(--gold-dark);padding:4px 10px;white-space:nowrap">Selesai</span>
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.75rem;color:var(--gray)">Hasil autentikasi telah dikirimkan kepada Anda.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq-section section-pad" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Pertanyaan Umum</p>
+      <div class="divider-gold"></div>
+      <h2 id="faq-heading">Tanya Jawab</h2>
+      <p>Jawaban atas pertanyaan yang paling sering kami terima.</p>
+    </div>
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+          <span>Merek apa saja yang dapat diautentikasi?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-1" role="region">
+          <p>Kami menangani tas merek Eropa utama termasuk Louis Vuitton, Chanel, Hermès, Gucci, Dior, Prada, Bottega Veneta, Saint Laurent, Fendi, dan Balenciaga. Jika merek Anda tidak tercantum, konsultasikan terlebih dahulu melalui WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+          <span>Berapa lama proses autentikasi berlangsung?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-2" role="region">
+          <p>Autentikasi foto memerlukan estimasi 1–3 hari kerja setelah semua foto diterima. Pemeriksaan fisik memerlukan 1–2 hari kerja setelah barang tiba. Waktu dapat berbeda tergantung antrian dan kelengkapan data.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+          <span>Foto apa saja yang diperlukan untuk autentikasi?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-3" role="region">
+          <p>Kami memerlukan foto dari semua sisi (depan, belakang, samping, dalam, dan dasar), serta foto detail logo, hardware, jahitan, date code atau serial number, label, dan kelengkapan yang dimiliki. Foto harus tajam, cukup terang, dan tidak terlalu jauh dari objek.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+          <span>Apakah hasil autentikasi dijamin 100% akurat?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-4" role="region">
+          <p>Hasil autentikasi kami berbasis bukti dari foto atau pemeriksaan fisik yang tersedia. Kami tidak membuat klaim absolut jika data tidak mencukupi. Jika kesimpulan tidak dapat ditarik dari data yang ada, kami akan transparan menyampaikan hal tersebut beserta penjelasan apa yang masih dibutuhkan.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+          <span>Bagaimana cara pengiriman barang untuk pemeriksaan fisik?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-5" role="region">
+          <p>Untuk pemeriksaan fisik, Anda dapat mengantar langsung atau mengirim melalui jasa pengiriman terpercaya dengan asuransi barang. Detail koordinasi akan dibahas melalui WhatsApp sebelum barang dikirimkan.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+          <span>Apakah data dan foto saya akan dijaga kerahasiaannya?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-6" role="region">
+          <p>Ya. Semua data dan foto yang Anda berikan hanya digunakan untuk keperluan proses autentikasi yang Anda ajukan. Kami tidak menyebarluaskan, menjual, atau menggunakan informasi Anda untuk tujuan lain tanpa izin.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-7">
+          <span>Apakah ada konsultasi awal sebelum mengajukan?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-7" role="region">
+          <p>Ya. Konsultasi awal melalui WhatsApp tersedia dan tidak dipungut biaya. Anda dapat menanyakan apakah merek dan model tas Anda dapat ditangani, jenis layanan yang tepat, serta perkiraan biaya sebelum melakukan pengajuan resmi.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner" aria-labelledby="auth-cta-heading">
+  <div class="container">
+    <p class="section-label" style="text-align:center;margin-bottom:16px">Mulai Konsultasi</p>
+    <h2 id="auth-cta-heading">Masih Ada Pertanyaan?</h2>
+    <p>Hubungi kami langsung melalui WhatsApp untuk konsultasi awal sebelum mengajukan autentikasi.</p>
+    <div class="btn-group">
+      <a href="#form-autentikasi" class="btn btn-gold">Ajukan Autentikasi</a>
+      <a href="https://wa.me/6285179936549?text=Halo%20CUBB%2C%20saya%20ingin%20konsultasi%20mengenai%20layanan%20Autentikasi%20By%20RY."
+         target="_blank" rel="noopener noreferrer" class="btn btn-outline-light">
+        Konsultasi via WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-main">CUBB</div>
+        <div class="logo-sub">LUXURY GOODS BUYER</div>
+        <p>Kami membeli putus tas dan jam mewah preloved/original. Proses transparan, aman, dan langsung cair. Layanan autentikasi tersedia melalui Autentikasi By RY.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <ul role="list">
+          <li><a href="jual.html?type=tas">Beli Putus Tas Mewah</a></li>
+          <li><a href="jual.html?type=jam">Beli Putus Jam Tangan</a></li>
+          <li><a href="autentikasi.html">Autentikasi By RY</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Informasi</h4>
+        <ul role="list">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="jual.html">Jual Barang</a></li>
+          <li><a href="autentikasi.html">Autentikasi</a></li>
+          <li><a href="https://wa.me/6285179936549" target="_blank" rel="noopener">Hubungi Kami</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CUBB Luxury Goods Buyer. Seluruh hak dilindungi.</p>
+      <p>Autentikasi By RY &mdash; Layanan Autentikasi Tas Eropa</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FLOAT ===== -->
+<a href="https://wa.me/6285179936549?text=Halo%20CUBB%2C%20saya%20ingin%20konsultasi%20mengenai%20Autentikasi%20By%20RY."
+   target="_blank" rel="noopener noreferrer"
+   class="wa-float" aria-label="Konsultasi Autentikasi By RY via WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="wa-label">WhatsApp</span>
+</a>
+
+<script src="js/main.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>
