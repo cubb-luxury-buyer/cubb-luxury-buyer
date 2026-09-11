@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jual Putus Hermès | CUBB Luxury Goods Buyer</title>
+  <meta name="description" content="CUBB menerima pembelian putus tas Hermès original. Kirim detail tas Anda untuk proses penilaian profesional dan penawaran berdasarkan kondisi serta kelengkapan." />
+  <link rel="canonical" href="https://www.selltocubb.id/jual-hermes.html" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jual Putus Hermès | CUBB Luxury Goods Buyer" />
+  <meta property="og:description" content="CUBB menerima pembelian putus tas Hermès original dengan proses penilaian profesional dan penawaran berdasarkan kondisi serta kelengkapan." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.selltocubb.id/jual-hermes.html" />
+
+  <link rel="icon" type="image/png" href="assets/cubb-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Fix hamburger — reset browser default button styles */
+    .hamburger {
+      background: transparent;
+      border: none;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    /* ── Hermès image banner ── */
+    .hermes-banner {
+      width: 100%;
+      max-height: 420px;
+      overflow: hidden;
+      background: #0a0a0a;
+    }
+    .hermes-banner img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: center 28%;
+      display: block;
+      opacity: 0.9;
+    }
+
+    /* ── Models grid — 4 kolom desktop ── */
+    .hermes-models-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(201,168,76,0.15);
+      margin-top: 36px;
+    }
+    .hermes-model-item {
+      background: #faf7f2;
+      padding: 26px 22px;
+      transition: background 0.2s;
+    }
+    .hermes-model-item:hover { background: #fff; }
+    .hermes-model-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #0a0a0a;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+    .hermes-model-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      color: #7a7060;
+      line-height: 1.6;
+    }
+    .hermes-disclaimer {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      color: #9a8f7a;
+      margin-top: 24px;
+      padding: 16px 20px;
+      border-left: 2px solid rgba(201,168,76,0.4);
+      background: rgba(201,168,76,0.04);
+      line-height: 1.7;
+    }
+
+    /* ── Value factors grid — 3 kolom ── */
+    .hermes-factors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: rgba(201,168,76,0.12);
+      margin-top: 36px;
+    }
+    .hermes-factor-item {
+      background: #faf7f2;
+      padding: 28px 24px;
+      transition: background 0.2s;
+    }
+    .hermes-factor-item:hover { background: #fff; }
+    .hermes-factor-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 700;
+      color: rgba(201,168,76,0.35);
+      line-height: 1; margin-bottom: 10px;
+    }
+    .hermes-factor-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; font-weight: 700;
+      color: #0a0a0a; letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .hermes-factor-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem; color: #7a7060; line-height: 1.75;
+    }
+
+    /* ── Process steps — 4 kolom ── */
+    .hermes-process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+      margin-top: 48px;
+    }
+    .hermes-process-grid::before {
+      content: '';
+      position: absolute;
+      top: 39px; left: 8%; right: 8%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4), transparent);
+    }
+    .hermes-step { padding: 0 20px; text-align: center; }
+    .hermes-step-num {
+      width: 78px; height: 78px;
+      background: #0a0a0a;
+      border: 1.5px solid rgba(201,168,76,0.6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 22px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: rgba(201,168,76,0.85);
+      position: relative; z-index: 1;
+    }
+    .hermes-step h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem; font-weight: 700;
+      color: #0a0a0a; margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+    .hermes-step p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem; color: #7a7060; line-height: 1.8;
+    }
+
+    /* ── Why CUBB — 2 kolom ── */
+    .hermes-why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: rgba(201,168,76,0.12);
+      margin-top: 36px;
+    }
+    .hermes-why-item {
+      background: #faf7f2;
+      padding: 32px 28px;
+      transition: background 0.2s;
+    }
+    .hermes-why-item:hover { background: #fff; }
+    .hermes-why-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; font-weight: 700;
+      color: #0a0a0a; letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+    .hermes-why-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem; color: #7a7060; line-height: 1.85;
+    }
+
+    /* ── Internal linking strip ── */
+    .hermes-internal-links {
+      background: #f0ebe0;
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding: 48px 0;
+    }
+    .hermes-internal-links .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .hermes-link-group { flex: 1; min-width: 200px; }
+    .hermes-link-group p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem; color: #7a7060;
+      line-height: 1.85; margin-bottom: 10px;
+    }
+    .hermes-link-group a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: #c9a84c;
+      border-bottom: 1px solid rgba(201,168,76,0.35);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .hermes-link-group a:hover { color: #0a0a0a; border-color: #0a0a0a; }
+
+    /* ── Closing CTA — dark ── */
+    .hermes-closing {
+      background: #0a0a0a;
+      padding: 88px 0;
+      text-align: center;
+    }
+    .hermes-closing .section-label { text-align: center; margin-bottom: 16px; }
+    .hermes-closing h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700; color: #f5f0e8;
+      margin-bottom: 16px; line-height: 1.2;
+    }
+    .hermes-closing h2 em { color: #c9a84c; font-style: italic; }
+    .hermes-closing p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem; color: rgba(245,240,232,0.6);
+      max-width: 480px; margin: 0 auto 36px; line-height: 1.9;
+    }
+
+    /* ── Prose paragraphs ── */
+    .hermes-prose p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem; line-height: 1.95;
+      color: #6b6355; max-width: 720px;
+    }
+    .hermes-prose p + p { margin-top: 16px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .hermes-models-grid  { grid-template-columns: repeat(3, 1fr); }
+      .hermes-factors-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .hermes-models-grid   { grid-template-columns: repeat(2, 1fr); }
+      .hermes-process-grid  { grid-template-columns: repeat(2, 1fr); gap: 40px 20px; }
+      .hermes-process-grid::before { display: none; }
+      .hermes-why-grid      { grid-template-columns: 1fr; }
+      .hermes-banner img    { height: 280px; }
+    }
+    @media (max-width: 560px) {
+      .hermes-models-grid  { grid-template-columns: 1fr; }
+      .hermes-factors-grid { grid-template-columns: 1fr; }
+      .hermes-process-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hermes-banner img   { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="Navigasi utama">
+  <a href="index.html" class="navbar-logo" aria-label="Beranda CUBB Luxury Goods Buyer">
+    <span class="logo-main">CUBB</span>
+    <span class="logo-sub">LUXURY GOODS BUYER</span>
+  </a>
+  <ul class="navbar-links" role="list">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="jual.html">Jual Barang</a></li>
+    <li><a href="autentikasi.html">Autentikasi By CUBB</a></li>
+  </ul>
+  <a href="jual.html" class="navbar-cta" aria-label="Ajukan penawaran">Jual Sekarang</a>
+  <button class="hamburger" aria-label="Buka menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" role="dialog" aria-label="Menu navigasi mobile">
+  <a href="index.html">Beranda</a>
+  <a href="jual.html">Jual Barang</a>
+  <a href="autentikasi.html">Autentikasi By CUBB</a>
+  <a href="jual.html" class="btn btn-gold" style="margin-top:8px">Jual Sekarang</a>
+</div>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero" aria-labelledby="page-heading">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-pattern" aria-hidden="true"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <p class="section-label">CUBB — BELI PUTUS</p>
+    <div class="divider-gold"></div>
+    <h1 id="page-heading">Jual Putus Hermès</h1>
+    <p>Jual tas Hermès original Anda dengan proses penilaian profesional dan penawaran berdasarkan kondisi serta kelengkapan.</p>
+    <div style="margin-top:32px">
+      <a href="jual.html?type=tas" class="btn btn-gold">JUAL HERMÈS SEKARANG</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== IMAGE BANNER ===== -->
+<div class="hermes-banner" role="img" aria-label="Tas Hermès — koleksi luxury bags yang diterima CUBB">
+  <img src="assets/hermes.png" alt="Hermès luxury handbag — diterima CUBB untuk pembelian putus" />
+</div>
+
+<!-- ===== INTRO ===== -->
+<section class="section-pad" aria-labelledby="intro-heading">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Tentang Layanan</p>
+      <div class="divider-gold"></div>
+      <h2 id="intro-heading">Jual Hermès Original di CUBB</h2>
+    </div>
+    <div class="hermes-prose" style="margin-top:32px">
+      <p>
+        Hermès menempati posisi tersendiri di dunia luxury goods — setiap tas dibuat dengan pengerjaan tangan yang teliti dan sering kali memiliki karakter yang unik pada tiap unitnya. Karena alasan inilah penilaian tas Hermès menuntut ketelitian dan pemahaman terhadap detail yang tidak sama dengan brand lain.
+      </p>
+      <p>
+        CUBB menerima pembelian putus tas Hermès original secara langsung dari pemiliknya. Kami bukan marketplace maupun sistem konsinyasi — setiap penawaran datang langsung dari CUBB setelah tas Anda melalui proses evaluasi menyeluruh.
+      </p>
+      <p>
+        Baik itu Birkin, Kelly, Constance, maupun model lain dari lini leather goods Hermès, setiap tas dinilai secara individual. Kondisi, material, warna, hardware, dan kelengkapan turut menjadi bagian dari pertimbangan sebelum penawaran kami sampaikan.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODEL HERMÈS ===== -->
+<section class="section-pad" style="background:#f0ebe0" aria-labelledby="models-heading">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Model</p>
+      <div class="divider-gold"></div>
+      <h2 id="models-heading">Model Hermès yang Kami Pertimbangkan</h2>
+      <p>Kami mempertimbangkan berbagai model Hermès berdasarkan ukuran, material, warna, kondisi, tahun produksi, hardware, kelengkapan, dan hasil pemeriksaan.</p>
+    </div>
+
+    <div class="hermes-models-grid" role="list">
+
+      <div class="hermes-model-item" role="listitem">
+        <p class="hermes-model-name">Hermès Birkin</p>
+        <p class="hermes-model-desc">Birkin 25, 30, 35, 40 — berbagai leather &amp; hardware</p>
+      </div>
+
+      <div class="hermes-model-item" role="listitem">
+        <p class="hermes-model-name">Hermès Kelly</p>
+        <p class="hermes-model-desc">Kelly 25, 28, 32 — Sellier &amp; Retourne</p>
+      </div>
+
+      <div class="hermes-model-item" role="listitem">
+        <p class="hermes-model-name">Hermès Constance</p>
+        <p class="hermes-model-desc">Constance 18, 24 — dengan H clasp ikonik</p>
+      </div>
+
+      <div class="hermes-model-item" role="listitem">
+        <p class="hermes-model-name">Hermès Evelyne</p>
+        <p class="hermes-model-desc">TPM, PM, GM — Clemence &amp; Taurillon</p>
+      </div>
+
+      <div class="hermes-model-item" role="listitem">
+        <p class="hermes-model-name">Hermès Lindy</p>
+        <p class="hermes-model-desc">Lindy 26, 30 — desain slouchy dua handle</p>
+      </div>
+
+      <div class="hermes-model-item" role="listitem">
+        <p class="hermes-model-name">Hermès Picotin</p>
+        <p class="hermes-model-desc">Picotin 18, 22 — Clemence, bucket bag</p>
+      </div>
+
+      <div class="hermes-model-item" role="listitem">
+        <p class="hermes-model-name">Hermès Garden Party</p>
+        <p class="hermes-model-desc">30, 36 — Negonda leather, tote sehari-hari</p>
+      </div>
+
+      <div class="hermes-model-item" role="listitem">
+        <p class="hermes-model-name">Hermès Herbag</p>
+        <p class="hermes-model-desc">Herbag Zip 31, 39 — canvas &amp; leather trim</p>
+      </div>
+
+    </div>
+
+    <p class="hermes-disclaimer">
+      <strong>Catatan:</strong> Daftar ini merupakan contoh model yang umum kami pertimbangkan, bukan jaminan pembelian. Karena tas Hermès sering memiliki karakteristik individual, setiap unit dievaluasi secara khusus. Ukuran, material, warna, hardware, tahun produksi, kondisi, dan kelengkapan memengaruhi keputusan serta nilai penawaran.
+    </p>
+  </div>
+</section>
+
+<!-- ===== FAKTOR NILAI ===== -->
+<section class="section-pad" aria-labelledby="value-heading">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Penilaian</p>
+      <div class="divider-gold"></div>
+      <h2 id="value-heading">Apa yang Mempengaruhi Nilai Tas Hermès?</h2>
+      <p>Penilaian tas Hermès melibatkan sejumlah faktor yang saling berkaitan. Nilai aktual selalu bergantung pada kondisi dan kondisi pasar saat penilaian.</p>
+    </div>
+
+    <div class="hermes-factors-grid">
+
+      <div class="hermes-factor-item">
+        <div class="hermes-factor-num" aria-hidden="true">01</div>
+        <p class="hermes-factor-title">Keaslian &amp; Detail Produksi</p>
+        <p class="hermes-factor-desc">Verifikasi autentisitas adalah tahap pertama. Blind stamp atau detail produksi, bila terbaca, membantu memperkirakan tahun pembuatan sebagai bagian dari evaluasi.</p>
+      </div>
+
+      <div class="hermes-factor-item">
+        <div class="hermes-factor-num" aria-hidden="true">02</div>
+        <p class="hermes-factor-title">Model &amp; Ukuran</p>
+        <p class="hermes-factor-desc">Model seperti Birkin, Kelly, atau Constance memiliki tingkat permintaan yang berbeda. Ukuran tertentu juga lebih dicari dibanding yang lain di pasar sekunder.</p>
+      </div>
+
+      <div class="hermes-factor-item">
+        <div class="hermes-factor-num" aria-hidden="true">03</div>
+        <p class="hermes-factor-title">Leather &amp; Material</p>
+        <p class="hermes-factor-desc">Hermès menggunakan beragam leather — Togo, Clemence, Epsom, Box, hingga exotic. Jenis material dan karakteristiknya menjadi bagian penting dalam penilaian.</p>
+      </div>
+
+      <div class="hermes-factor-item">
+        <div class="hermes-factor-num" aria-hidden="true">04</div>
+        <p class="hermes-factor-title">Warna &amp; Hardware</p>
+        <p class="hermes-factor-desc">Warna serta jenis hardware (gold, palladium) turut dipertimbangkan. Tidak ada warna atau material yang otomatis bernilai tetap — semuanya bergantung pada kondisi dan permintaan.</p>
+      </div>
+
+      <div class="hermes-factor-item">
+        <div class="hermes-factor-num" aria-hidden="true">05</div>
+        <p class="hermes-factor-title">Kondisi Keseluruhan</p>
+        <p class="hermes-factor-desc">Kondisi corner, leather surface, hardware, jahitan, dan interior diperiksa menyeluruh. Tas yang terawat baik umumnya mendapat penilaian yang lebih baik.</p>
+      </div>
+
+      <div class="hermes-factor-item">
+        <div class="hermes-factor-num" aria-hidden="true">06</div>
+        <p class="hermes-factor-title">Kelengkapan &amp; Aksesori</p>
+        <p class="hermes-factor-desc">Box, dust bag, lock &amp; keys, clochette, extra strap, rain cover, dan receipt membantu proses evaluasi. Ketidaklengkapan sebagian item bukan berarti pengajuan otomatis ditolak.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROSES ===== -->
+<section class="section-pad" style="background:#f0ebe0" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Cara Kerja</p>
+      <div class="divider-gold"></div>
+      <h2 id="process-heading">Proses Penilaian Tas Hermès</h2>
+      <p>Empat langkah dari pengiriman detail awal hingga proses pembelian selesai.</p>
+    </div>
+
+    <div class="hermes-process-grid">
+
+      <div class="hermes-step">
+        <div class="hermes-step-num" aria-hidden="true">1</div>
+        <h4>Kirim Detail</h4>
+        <p>Kirimkan foto tas Hermès Anda beserta informasi model, ukuran, material, warna, hardware, dan detail lain yang tersedia.</p>
+      </div>
+
+      <div class="hermes-step">
+        <div class="hermes-step-num" aria-hidden="true">2</div>
+        <h4>Pemeriksaan</h4>
+        <p>CUBB mengevaluasi authenticity, model, kondisi, material, hardware, detail produksi, dan kelengkapan tas secara menyeluruh.</p>
+      </div>
+
+      <div class="hermes-step">
+        <div class="hermes-step-num" aria-hidden="true">3</div>
+        <h4>Penawaran</h4>
+        <p>Berdasarkan hasil evaluasi, CUBB menyampaikan penawaran pembelian secara langsung dan transparan.</p>
+      </div>
+
+      <div class="hermes-step">
+        <div class="hermes-step-num" aria-hidden="true">4</div>
+        <h4>Transaksi</h4>
+        <p>Jika penawaran disepakati, proses pembelian putus dilanjutkan sesuai prosedur CUBB — discreet dan efisien.</p>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:52px">
+      <a href="jual.html?type=tas" class="btn btn-gold">JUAL HERMÈS SEKARANG</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MENGAPA CUBB ===== -->
+<section class="section-pad" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Keunggulan</p>
+      <div class="divider-gold"></div>
+      <h2 id="why-heading">Mengapa Jual Hermès ke CUBB?</h2>
+    </div>
+
+    <div class="hermes-why-grid">
+
+      <div class="hermes-why-item">
+        <p class="hermes-why-title">Penilaian Profesional</p>
+        <p class="hermes-why-desc">Penilaian Hermès menuntut perhatian terhadap detail — dari jenis leather hingga blind stamp. Tim CUBB melakukan evaluasi dengan pemahaman terhadap karakter khas tas Hermès.</p>
+      </div>
+
+      <div class="hermes-why-item">
+        <p class="hermes-why-title">Pembelian Putus</p>
+        <p class="hermes-why-desc">CUBB membeli tas Hermès Anda secara langsung — bukan titipan atau konsinyasi. Transaksi selesai ketika penawaran disepakati kedua belah pihak.</p>
+      </div>
+
+      <div class="hermes-why-item">
+        <p class="hermes-why-title">Proses yang Discreet</p>
+        <p class="hermes-why-desc">Menjual tas dengan nilai tinggi memerlukan kerahasiaan. Seluruh komunikasi dan transaksi dijaga privasinya, tanpa eksposur publik.</p>
+      </div>
+
+      <div class="hermes-why-item">
+        <p class="hermes-why-title">Penawaran Berdasarkan Kondisi &amp; Market</p>
+        <p class="hermes-why-desc">Penawaran kami mencerminkan kondisi aktual tas dan pergerakan pasar sekunder yang relevan — disampaikan secara transparan dan terbuka untuk didiskusikan.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTERNAL LINKS ===== -->
+<div class="hermes-internal-links" aria-label="Halaman terkait CUBB">
+  <div class="container">
+    <div class="hermes-link-group">
+      <p>Selain Hermès, CUBB juga menerima berbagai tas dan jam tangan luxury lainnya dari brand terkemuka.</p>
+      <a href="jual.html">Lihat semua brand yang kami terima</a>
+    </div>
+    <div class="hermes-link-group">
+      <p>Anda juga dapat melihat halaman khusus untuk penjualan tas Louis Vuitton original.</p>
+      <a href="jual-louis-vuitton.html">Jual Putus Louis Vuitton — CUBB</a>
+    </div>
+    <div class="hermes-link-group">
+      <p>Untuk tas Chanel, lihat halaman khusus pembelian Chanel kami.</p>
+      <a href="jual-chanel.html">Jual Putus Chanel — CUBB</a>
+    </div>
+    <div class="hermes-link-group">
+      <p>Untuk informasi khusus mengenai pembelian jam tangan Rolex, kunjungi halaman dedicated kami.</p>
+      <a href="jual-rolex.html">Jual Putus Rolex — CUBB</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CLOSING CTA ===== -->
+<section class="hermes-closing" aria-labelledby="closing-heading">
+  <div class="container">
+    <p class="section-label">Siap Menjual?</p>
+    <h2 id="closing-heading">Jual Tas Hermès<br /><em>Anda</em></h2>
+    <p>Jika Anda memiliki tas Hermès yang sudah tidak digunakan dan ingin dilepas, kirimkan detailnya kepada CUBB untuk proses penilaian.</p>
+    <div class="btn-group">
+      <a href="jual.html?type=tas" class="btn btn-gold">JUAL HERMÈS</a>
+      <a href="https://wa.me/6285179936549?text=Halo%20CUBB%2C%20saya%20ingin%20konsultasi%20jual%20putus%20tas%20Herm%C3%A8s."
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn-outline-light">
+        Konsultasi via WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-main">CUBB</div>
+        <div class="logo-sub">LUXURY GOODS BUYER</div>
+        <p>Kami membeli putus tas dan jam mewah preloved/original. Proses transparan, aman, dan discreet. Layanan autentikasi tersedia melalui Autentikasi By CUBB.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <ul role="list">
+          <li><a href="jual.html?type=tas">Beli Putus Tas Mewah</a></li>
+          <li><a href="jual.html?type=jam">Beli Putus Jam Tangan</a></li>
+          <li><a href="autentikasi.html">Autentikasi By CUBB</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Informasi</h4>
+        <ul role="list">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="jual.html">Jual Barang</a></li>
+          <li><a href="autentikasi.html">Autentikasi</a></li>
+          <li><a href="https://wa.me/6285179936549" target="_blank" rel="noopener">Hubungi Kami</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CUBB Luxury Goods Buyer. Seluruh hak dilindungi.</p>
+      <p>Autentikasi By CUBB &mdash; Layanan Autentikasi Tas Eropa</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FLOAT ===== -->
+<a href="https://wa.me/6285179936549?text=Halo%20CUBB%2C%20saya%20ingin%20konsultasi%20jual%20putus%20tas%20Herm%C3%A8s."
+   target="_blank" rel="noopener noreferrer"
+   class="wa-float" aria-label="Hubungi CUBB via WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="wa-label">WhatsApp</span>
+</a>
+
+<script src="js/main.js"></script>
+</body>
+</html>
