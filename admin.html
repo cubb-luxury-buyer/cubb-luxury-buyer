@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <link rel="icon" type="image/png" href="assets/cubb-logo.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin — CUBB Buyer Network</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/buyer-network.css?v=3" />
+</head>
+<body class="bn-admin-body">
+
+<!-- ===== ADMIN HEADER ===== -->
+<header class="bn-admin-header">
+  <div class="bn-admin-header-inner">
+    <a href="index.html" class="bn-admin-logo" aria-label="Beranda CUBB">
+      <span class="logo-main">CUBB</span>
+      <span class="logo-sub">Admin Console</span>
+    </a>
+    <span class="bn-admin-badge">Internal Tool</span>
+  </div>
+</header>
+
+<main class="bn-admin-main">
+  <div class="bn-container">
+
+    <!-- Section intro -->
+    <div class="bn-section-head">
+      <p class="section-label">CUBB Buyer Network</p>
+      <div class="divider-gold" style="margin-left:0"></div>
+      <h1>Indicative Buyer Offer Sessions</h1>
+      <p class="bn-muted">
+        Internal tool untuk menyusun dan mempresentasikan <em>indicative buyer offer</em> kepada customer.
+        Ini bukan lelang publik — seluruh angka adalah indikatif dan dikonfigurasi oleh admin.
+      </p>
+    </div>
+
+    <!-- Actions -->
+    <div class="bn-toolbar">
+      <button type="button" class="btn btn-gold" id="btnNewSession">+ Create Session</button>
+      <button type="button" class="btn btn-outline bn-btn-sm" id="btnLoadDemo">Load Demo Session</button>
+      <span class="bn-muted bn-note" id="storeNote"></span>
+    </div>
+
+    <!-- Sessions table -->
+    <div class="bn-table-wrap">
+      <table class="bn-table" aria-label="Daftar offer session">
+        <thead>
+          <tr>
+            <th>Session Code</th>
+            <th>Product</th>
+            <th>Estimated Range</th>
+            <th>Max Indicative</th>
+            <th>Highest Offer</th>
+            <th>Time Remaining</th>
+            <th>Status</th>
+            <th class="bn-col-actions">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="sessionsBody">
+          <!-- rows injected -->
+        </tbody>
+      </table>
+      <div class="bn-empty" id="emptyState">
+        <p>Belum ada session. Klik <strong>Create Session</strong> untuk memulai.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ===== CREATE / EDIT MODAL ===== -->
+<div class="bn-modal" id="sessionModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="bn-modal-overlay" data-close></div>
+  <div class="bn-modal-panel" role="document">
+    <div class="bn-modal-head">
+      <h2 id="modalTitle">Create Offer Session</h2>
+      <button type="button" class="bn-modal-close" aria-label="Tutup" data-close>&times;</button>
+    </div>
+
+    <form id="sessionForm" class="bn-form" novalidate>
+      <input type="hidden" id="f_id" />
+
+      <p class="bn-form-group-label">Product</p>
+      <div class="bn-grid-2">
+        <div class="bn-field">
+          <label for="f_brand">Product Brand <span class="req">*</span></label>
+          <input type="text" id="f_brand" placeholder="Rolex" required />
+        </div>
+        <div class="bn-field">
+          <label for="f_model">Product Model <span class="req">*</span></label>
+          <input type="text" id="f_model" placeholder="Datejust 126234" required />
+        </div>
+        <div class="bn-field">
+          <label for="f_reference">Product Reference</label>
+          <input type="text" id="f_reference" placeholder="126234" />
+        </div>
+        <div class="bn-field">
+          <label for="f_year">Product Year</label>
+          <input type="text" id="f_year" placeholder="2021" inputmode="numeric" />
+        </div>
+        <div class="bn-field">
+          <label for="f_condition">Condition</label>
+          <input type="text" id="f_condition" placeholder="Excellent" />
+        </div>
+        <div class="bn-field">
+          <label for="f_fullset">Fullset / Accessories</label>
+          <input type="text" id="f_fullset" placeholder="Yes — box, papers, extra links" />
+        </div>
+      </div>
+
+      <div class="bn-field">
+        <label for="f_photos">Product Photos</label>
+        <div class="bn-upload" id="bnUpload">
+          <input type="file" id="f_photos" accept="image/*" multiple />
+          <span class="bn-upload-icon" aria-hidden="true">+</span>
+          <p>Tarik foto ke sini atau <span>pilih file</span>. Disimpan lokal (MVP).</p>
+        </div>
+        <div class="bn-upload-preview" id="bnPreview"></div>
+      </div>
+
+      <p class="bn-form-group-label">Pricing (Rp)</p>
+      <div class="bn-grid-3">
+        <div class="bn-field">
+          <label for="f_estMin">Estimated Minimum <span class="req">*</span></label>
+          <input type="number" id="f_estMin" placeholder="10000000" min="0" step="100000" required />
+        </div>
+        <div class="bn-field">
+          <label for="f_estMax">Estimated Maximum <span class="req">*</span></label>
+          <input type="number" id="f_estMax" placeholder="15000000" min="0" step="100000" required />
+        </div>
+        <div class="bn-field">
+          <label for="f_maxInd">Maximum Indicative Offer <span class="req">*</span></label>
+          <input type="number" id="f_maxInd" placeholder="12500000" min="0" step="100000" required />
+        </div>
+      </div>
+      <p class="bn-hint">Angka indicative offer tidak akan pernah ditampilkan melebihi <strong>Maximum Indicative Offer</strong>.</p>
+
+      <div class="bn-grid-2">
+        <div class="bn-field">
+          <label for="f_duration">Offer Session Duration (menit) <span class="req">*</span></label>
+          <input type="number" id="f_duration" value="10" min="1" max="120" step="1" required />
+        </div>
+      </div>
+
+      <p class="bn-form-group-label">Offer Progression</p>
+      <div class="bn-prog-panel">
+        <div class="bn-prog-mode">
+          <label class="bn-radio">
+            <input type="radio" name="progMode" value="AUTOMATIC" checked />
+            <span>Automatic</span>
+          </label>
+          <label class="bn-radio">
+            <input type="radio" name="progMode" value="MANUAL" />
+            <span>Manual override</span>
+          </label>
+          <span class="bn-sim-tag" title="Session ini adalah simulasi indikatif internal">Indicative Simulation</span>
+        </div>
+        <div class="bn-phase-grid" id="phaseGrid">
+          <div class="bn-phase"><span class="bn-phase-name">Early Phase</span><span class="bn-phase-range">50% – 75%</span><span class="bn-phase-time">10:00 – 05:00</span></div>
+          <div class="bn-phase"><span class="bn-phase-name">Mid Phase</span><span class="bn-phase-range">75% – 90%</span><span class="bn-phase-time">05:00 – 02:00</span></div>
+          <div class="bn-phase"><span class="bn-phase-name">Final Phase</span><span class="bn-phase-range">90% – 100%</span><span class="bn-phase-time">02:00 – 00:00</span></div>
+        </div>
+        <p class="bn-hint">Progression dibuat otomatis dan terkontrol dari Maximum Indicative Offer. Highest indicative offer tidak akan pernah melebihi maksimum. Angka ini bersifat indikatif/simulasi, bukan bid nyata.</p>
+      </div>
+
+      <div class="bn-form-group-row">
+        <p class="bn-form-group-label" style="margin:0">Buyers / Participants</p>
+        <button type="button" class="bn-mini-btn" id="btnAddBuyer">+ Add Buyer</button>
+      </div>
+      <p class="bn-hint">Peserta yang dipilih admin. Nama hanya ditampilkan jika memang peserta CUBB buyer network yang diizinkan. Untuk demo, tandai sebagai indikatif/simulasi.</p>
+      <div class="bn-buyers-head">
+        <span>Name</span>
+        <span>Company (opsional)</span>
+        <span></span>
+      </div>
+      <div id="buyersList" class="bn-offers-list"></div>
+
+      <!-- Manual override offers (hidden unless Manual mode) -->
+      <div id="manualWrap" hidden>
+        <div class="bn-form-group-row">
+          <p class="bn-form-group-label" style="margin:0">Manual Indicative Offers</p>
+          <button type="button" class="bn-mini-btn" id="btnAddOffer">+ Add Offer</button>
+        </div>
+        <p class="bn-hint">"Reveal" = mm:ss setelah sesi dimulai offer muncul. Semua angka otomatis dibatasi ke Maximum Indicative Offer.</p>
+        <div class="bn-offers-head">
+          <span>Buyer Label</span>
+          <span>Indicative Amount (Rp)</span>
+          <span>Reveal (mm:ss)</span>
+          <span></span>
+        </div>
+        <div id="offersList" class="bn-offers-list"></div>
+      </div>
+
+      <div class="bn-error" id="formError" hidden></div>
+
+      <div class="bn-modal-foot">
+        <button type="button" class="btn btn-outline bn-btn-sm" data-close>Cancel</button>
+        <button type="submit" class="btn btn-gold bn-btn-sm" id="btnSaveSession">Save Session</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ===== START CONFIRMATION MODAL ===== -->
+<div class="bn-modal" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle" hidden>
+  <div class="bn-modal-overlay" data-confirm-close></div>
+  <div class="bn-modal-panel bn-confirm-panel" role="document">
+    <div class="bn-modal-head">
+      <h2 id="confirmTitle">Start Offer Window</h2>
+      <button type="button" class="bn-modal-close" aria-label="Tutup" data-confirm-close>&times;</button>
+    </div>
+    <div class="bn-confirm-body">
+      <div class="bn-confirm-row">
+        <span class="bn-confirm-label">Product</span>
+        <span class="bn-confirm-value" id="cf_product">—</span>
+      </div>
+      <div class="bn-confirm-row">
+        <span class="bn-confirm-label">Estimated Range</span>
+        <span class="bn-confirm-value" id="cf_range">—</span>
+      </div>
+      <div class="bn-confirm-row">
+        <span class="bn-confirm-label">Maximum Indicative Offer</span>
+        <span class="bn-confirm-value" id="cf_max">—</span>
+      </div>
+      <div class="bn-confirm-row">
+        <span class="bn-confirm-label">Duration</span>
+        <span class="bn-confirm-value" id="cf_duration">—</span>
+      </div>
+      <div class="bn-confirm-row">
+        <span class="bn-confirm-label">Mode</span>
+        <span class="bn-confirm-value bn-confirm-mode" id="cf_mode">Indicative Simulation</span>
+      </div>
+      <div class="bn-confirm-row" id="cf_buyers_row">
+        <span class="bn-confirm-label">Participants</span>
+        <span class="bn-confirm-value" id="cf_buyers">—</span>
+      </div>
+    </div>
+    <div class="bn-modal-foot">
+      <button type="button" class="btn btn-outline bn-btn-sm" data-confirm-close>Cancel</button>
+      <button type="button" class="btn btn-gold bn-btn-sm" id="btnConfirmStart">Start 10 Minute Offer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="bn-toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="js/buyer-network.js?v=3"></script>
+<script src="js/admin.js?v=3"></script>
+</body>
+</html>

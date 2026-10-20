@@ -1,0 +1,38 @@
+{
+  // Local dev workflow only. Does not affect the website itself.
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "serve-static",
+      "type": "shell",
+      "command": "python",
+      "args": ["-m", "http.server", "5500"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": {
+        // Treats the server as "ready" as soon as it prints its startup line,
+        // so the browser launch does not wait forever.
+        "pattern": [
+          {
+            "regexp": ".",
+            "file": 1,
+            "location": 2,
+            "message": 3
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*Serving HTTP.*",
+          "endsPattern": ".*Serving HTTP.*"
+        }
+      }
+    }
+  ]
+}

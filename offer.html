@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <link rel="icon" type="image/png" href="assets/cubb-logo.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>CUBB Buyer Network — Indicative Offer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/buyer-network.css?v=3" />
+</head>
+<body class="bn-offer-body">
+
+<main class="bn-offer">
+
+  <!-- ===== HEADER ===== -->
+  <header class="bn-offer-header">
+    <p class="bn-offer-brand">CUBB</p>
+    <p class="bn-offer-network">Buyer Network</p>
+  </header>
+
+  <!-- ===== NOT FOUND ===== -->
+  <section class="bn-offer-missing" id="missingState" hidden>
+    <div class="bn-offer-card bn-offer-card--pad">
+      <p class="bn-status-chip">Session Not Found</p>
+      <h1 class="bn-missing-title">Offer tidak ditemukan</h1>
+      <p class="bn-muted">Link offer ini tidak valid atau sudah tidak tersedia. Silakan hubungi tim CUBB.</p>
+      <a href="https://wa.me/6285179936549" target="_blank" rel="noopener noreferrer" class="btn btn-outline bn-btn-sm">Hubungi CUBB</a>
+    </div>
+  </section>
+
+  <!-- ===== DRAFT (not started) ===== -->
+  <section class="bn-offer-missing" id="draftState" hidden>
+    <div class="bn-offer-card bn-offer-card--pad">
+      <p class="bn-status-chip">Offer Window Not Started</p>
+      <h1 class="bn-missing-title">Belum dimulai</h1>
+      <p class="bn-muted">Offer window untuk item ini belum dibuka. Mohon menunggu tim CUBB memulai sesi.</p>
+    </div>
+  </section>
+
+  <!-- ===== LIVE / CLOSED SESSION ===== -->
+  <section id="offerState" hidden>
+
+    <!-- Status + countdown -->
+    <div class="bn-offer-card bn-status-block">
+      <p class="bn-status-chip" id="statusChip">Offer Window Active</p>
+      <div class="bn-countdown" id="countdown" aria-live="polite">10:00</div>
+      <p class="bn-countdown-label" id="countdownLabel">Sisa waktu offer window</p>
+      <p class="bn-phase-chip" id="phaseChip" hidden>Early Phase</p>
+    </div>
+
+    <!-- Product -->
+    <div class="bn-offer-card">
+      <p class="bn-eyebrow">Product</p>
+      <h1 class="bn-product-name" id="productName">—</h1>
+      <div class="bn-gallery" id="gallery" hidden></div>
+      <dl class="bn-specs" id="specs"></dl>
+      <div class="bn-range">
+        <span class="bn-range-label">Estimated Range</span>
+        <span class="bn-range-value" id="rangeValue">—</span>
+      </div>
+    </div>
+
+    <!-- Highest indicative offer -->
+    <div class="bn-offer-card bn-highest-block">
+      <p class="bn-eyebrow bn-eyebrow--on-dark">Highest Indicative Offer</p>
+      <div class="bn-highest-amount" id="highestAmount">—</div>
+      <p class="bn-highest-sub" id="highestSub">Berdasarkan indicative buyer offers</p>
+    </div>
+
+    <!-- Indicative buyer offers -->
+    <div class="bn-offer-card">
+      <p class="bn-eyebrow">Indicative Buyer Offers</p>
+      <ul class="bn-offers" id="offersUl"></ul>
+      <p class="bn-waiting" id="waitingNote" hidden>Menunggu indicative offer berikutnya…</p>
+    </div>
+
+    <!-- Activity -->
+    <div class="bn-offer-card">
+      <p class="bn-eyebrow">Offer Activity</p>
+      <ul class="bn-activity" id="activityUl"></ul>
+    </div>
+
+    <!-- Closed notice -->
+    <div class="bn-closed-note" id="closedNote" hidden>
+      This indicative offer session has ended.
+    </div>
+
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bn-offer-foot">
+    <p>CUBB Buyer Network · Indicative Offer</p>
+    <p class="bn-disclaimer">Angka yang ditampilkan adalah <em>indicative buyer offer</em> dan bukan penawaran lelang publik yang mengikat.</p>
+  </footer>
+
+</main>
+
+<script src="js/buyer-network.js?v=3"></script>
+<script src="js/offer.js?v=3"></script>
+</body>
+</html>
